@@ -1,0 +1,40 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Environment
+.env
+.env.local
+
+# Logs
+logs/
+*.log
+
+# Build
+dist/
+build/
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Coverage
+coverage/
+
+# Docker
+*.pid
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Mongo
+data/db/
