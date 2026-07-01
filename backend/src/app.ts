@@ -1,0 +1,24 @@
+import express from "express";
+import cors from "cors";
+import helmet from "helmet";
+import morgan from "morgan";
+import healthRoutes from "./modules/health/health.route.js";
+import { notFoundHandler } from "./middleware/notFound.middleware.js";
+import { errorHandler } from "./middleware/error.middleware.js";
+const app = express();
+
+app.use(cors());
+app.use(helmet());
+app.use(morgan("dev"));
+app.use(express.json());
+app.get("/", (req, res) => {
+  res.json({
+    success: true,
+    message: "Welcome to ProjectIQ API",
+    version: "1.0.0",
+  });
+});
+app.use("/api/v1/health", healthRoutes);
+app.use(notFoundHandler);
+app.use(errorHandler);
+export default app;
