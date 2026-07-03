@@ -6,6 +6,7 @@ import healthRoutes from "./modules/health/health.route.js";
 import { notFoundHandler } from "./middleware/notFound.middleware.js";
 import { errorHandler } from "./middleware/error.middleware.js";
 import { projectRoutes } from "./modules/project/index.js";
+import authRoutes from "./modules/auth/index.js";
 const app = express();
 
 app.use(cors());
@@ -19,6 +20,10 @@ app.get("/", (req, res) => {
     version: "1.0.0",
   });
 });
+app.use(
+    "/api/v1/auth",
+    authRoutes
+);
 app.use("/api/v1/health", healthRoutes);
 app.use("/api/v1/projects", projectRoutes);
 app.use(notFoundHandler);
