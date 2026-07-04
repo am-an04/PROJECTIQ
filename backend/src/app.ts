@@ -7,7 +7,8 @@ import { notFoundHandler } from "./middleware/notFound.middleware.js";
 import { errorHandler } from "./middleware/error.middleware.js";
 import { projectRoutes } from "./modules/project/index.js";
 import authRoutes from "./modules/auth/index.js";
-import { recommendationRoutes } from "./modules/recommendation/index.js";
+import recommendationRoutes from "./modules/recommendation/index.js";
+
 const app = express();
 
 app.use(cors());

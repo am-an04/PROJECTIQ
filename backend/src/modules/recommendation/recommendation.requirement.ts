@@ -1,52 +1,16 @@
 // src/modules/recommendation/recommendation.requirement.ts
 
-import {
-  RecommendationRequest,
-  RequirementAnalysis,
-} from "./recommendation.types.js";
+import { RequirementService } from "../../core/requirement/index.js";
+import { RecommendationRequest } from "./recommendation.types.js";
 
 export class RequirementAnalyzer {
-  static analyze(
-    request: RecommendationRequest
-  ): RequirementAnalysis {
-    const keywords = [
+  static analyze(request: RecommendationRequest) {
+    const input = [
       request.title,
       request.description,
       ...request.features,
-    ]
-      .join(" ")
-      .toLowerCase()
-      .replace(/[^\w\s]/g, "")
-      .split(/\s+/)
-      .filter(Boolean);
+    ].join(" ");
 
-    let estimatedComplexity: "Low" | "Medium" | "High" = "Low";
-
-    if (
-      request.features.length >= 8 ||
-      (request.teamSize ?? 0) >= 8 ||
-      request.expectedScale === "Enterprise"
-    ) {
-      estimatedComplexity = "High";
-    } else if (
-      request.features.length >= 4 ||
-      (request.teamSize ?? 0) >= 4 ||
-      request.expectedScale === "Large"
-    ) {
-      estimatedComplexity = "Medium";
-    }
-
-    const technicalProject =
-      request.projectType !== "Non-Technical";
-
-    return {
-      keywords,
-
-      estimatedComplexity,
-
-      technicalProject,
-
-      detectedFeatures: request.features,
-    };
+    return RequirementService.analyze(input);
   }
 }

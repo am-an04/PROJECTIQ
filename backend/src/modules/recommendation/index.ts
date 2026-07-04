@@ -1,4 +1,5 @@
-// src/modules/recommendation/index.ts
 
-export { default as recommendationRoutes } from "./recommendation.route.js";
 
+import recommendationRoutes from "./recommendation.route.js";
+
+export default recommendationRoutes;

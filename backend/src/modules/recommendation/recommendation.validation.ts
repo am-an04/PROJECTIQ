@@ -2,6 +2,13 @@
 
 import { z } from "zod";
 
+import {
+  EXPERIENCE_LEVELS,
+  EXPECTED_SCALES,
+  DEPLOYMENT_PREFERENCES,
+  PROJECT_TYPES,
+} from "./recommendation.constants.js";
+
 export const recommendationSchema = z.object({
   title: z
     .string()
@@ -44,7 +51,7 @@ export const recommendationSchema = z.object({
     .optional(),
 
   experienceLevel: z
-    .enum(["Beginner", "Intermediate", "Advanced"])
+    .enum(EXPERIENCE_LEVELS)
     .optional(),
 
   targetUsers: z
@@ -54,7 +61,7 @@ export const recommendationSchema = z.object({
     .optional(),
 
   expectedScale: z
-    .enum(["Small", "Medium", "Large", "Enterprise"])
+    .enum(EXPECTED_SCALES)
     .optional(),
 
   preferredTechnologies: z
@@ -76,72 +83,14 @@ export const recommendationSchema = z.object({
     .optional(),
 
   deploymentPreference: z
-    .enum(["Cloud", "On-Premise", "Hybrid"])
+    .enum(DEPLOYMENT_PREFERENCES)
     .optional(),
 
   projectType: z
-    .enum(["Technical", "Non-Technical", "Research"])
+    .enum(PROJECT_TYPES)
     .optional(),
 });
 
-export type RecommendationInput = z.infer<typeof recommendationSchema>;// src/modules/recommendation/recommendation.constants.ts
-
-export const EXPERIENCE_LEVELS = [
-  "Beginner",
-  "Intermediate",
-  "Advanced",
-] as const;
-
-export const PROJECT_COMPLEXITIES = [
-  "Low",
-  "Medium",
-  "High",
-] as const;
-
-export const EXPECTED_SCALES = [
-  "Small",
-  "Medium",
-  "Large",
-  "Enterprise",
-] as const;
-
-export const DEPLOYMENT_PREFERENCES = [
-  "Cloud",
-  "On-Premise",
-  "Hybrid",
-] as const;
-
-export const PROJECT_TYPES = [
-  "Technical",
-  "Non-Technical",
-  "Research",
-] as const;
-
-export const TECHNOLOGY_TYPES = [
-  "Language",
-  "Framework",
-  "Database",
-  "Cloud",
-  "DevOps",
-  "AI Model",
-  "Tool",
-  "Architecture",
-  "Platform",
-  "Other",
-] as const;
-
-export const CONFIDENCE = {
-  MIN: 0,
-  MAX: 100,
-  HIGH: 85,
-  MEDIUM: 60,
-  LOW: 40,
-} as const;
-
-export const DEFAULTS = {
-  EXPERIENCE_LEVEL: "Intermediate",
-  PROJECT_COMPLEXITY: "Medium",
-  PROJECT_TYPE: "Technical",
-  EXPECTED_SCALE: "Medium",
-  DEPLOYMENT: "Cloud",
-} as const;
+export type RecommendationInput = z.infer<
+  typeof recommendationSchema
+>;

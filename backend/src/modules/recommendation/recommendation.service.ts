@@ -1,12 +1,11 @@
 // src/modules/recommendation/recommendation.service.ts
 
 import { RecommendationEngine } from "./recommendation.engine.js";
+import { RecommendationSelector } from "./recommendation.selector.js";
+import { RecommendationStackBuilder } from "./recommendation.stack-builder.js";
+import { RecommendationCompatibility } from "./recommendation.compatibility.js";
 import { RecommendationCompare } from "./recommendation.compare.js";
-import { RecommendationConfidence } from "./recommendation.confidence.js";
-import { RecommendationExplainer } from "./recommendation.explainer.js";
 import { RecommendationMapper } from "./recommendation.mapper.js";
-import { RecommendationML } from "./recommendation.ml.js";
-import { RequirementAnalyzer } from "./recommendation.requirement.js";
 
 import {
   RecommendationRequest,
@@ -14,59 +13,71 @@ import {
 } from "./recommendation.types.js";
 
 export class RecommendationService {
+
   static async generateRecommendation(
     request: RecommendationRequest
   ): Promise<RecommendationResult> {
 
-    // Try ML recommendation first
-    const mlRecommendation = await RecommendationML.predict(request);
-
-    if (mlRecommendation) {
-      return RecommendationMapper.toResponse(mlRecommendation);
-    }
-
-    // Analyze project requirements
-    const requirementAnalysis =
-      RequirementAnalyzer.analyze(request);
-
-    // Generate rule-based recommendation
+    // Step 1 - Generate recommendations
     const engineResult =
-      RecommendationEngine.analyze(request);
+      await RecommendationEngine.analyze(request);
 
-    // Compare technologies
+    // Step 2 - Select best technologies
+    const selectedTechnologies =
+      RecommendationSelector.select(
+        engineResult.technologies
+      );
+
+    // Step 3 - Build recommended stack
+    const stack =
+      RecommendationStackBuilder.build(
+        selectedTechnologies
+      );
+
+    // Step 4 - Calculate compatibility
+    const compatibility =
+      RecommendationCompatibility.compatibilityScore(
+        selectedTechnologies.map(
+          technology => technology.name
+        )
+      );
+
+    // Step 5 - Generate comparisons
     const comparisons =
       RecommendationCompare.compare(
-        engineResult.technologies
+        selectedTechnologies
       );
 
-    // Generate explanations
-    const explanations =
-      RecommendationExplainer.generate(
-        engineResult.technologies
-      );
-
-    // Calculate confidence
-    const overallConfidence =
-      RecommendationConfidence.calculate(
-        request,
-        engineResult.technologies
-      );
-
-    // Build final response
+    // Step 6 - Build response
     const result: RecommendationResult = {
-      requirementAnalysis,
 
-      domain: engineResult.domain,
+      requirementAnalysis:
+        engineResult.requirementAnalysis,
 
-      technologies: engineResult.technologies,
+      technologies:
+        selectedTechnologies,
+
+      stack,
+
+      compatibility,
+
+      score:
+        engineResult.score,
+
+      explanation:
+        engineResult.explanation,
+
+      mlPrediction:
+        engineResult.mlPrediction,
 
       comparisons,
 
-      explanations,
-
-      overallConfidence,
     };
 
-    return RecommendationMapper.toResponse(result);
+    return RecommendationMapper.toResponse(
+      result
+    );
+
   }
+
 }

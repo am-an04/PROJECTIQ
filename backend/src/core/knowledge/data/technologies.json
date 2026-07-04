@@ -1,0 +1,1261 @@
+[
+  {
+    "id": "react",
+    "name": "React",
+    "category": "Framework",
+    "description": "JavaScript library for UI",
+    "tags": [
+      "frontend",
+      "ui"
+    ],
+    "bestUseCases": [
+      "SPA",
+      "Dashboard"
+    ],
+    "supportedProjectTypes": [
+      "Web Development"
+    ],
+    "strengths": [
+      "Reusable components",
+      "Large ecosystem"
+    ],
+    "weaknesses": [
+      "Needs extra libraries"
+    ],
+    "alternatives": [
+      "Angular",
+      "Vue"
+    ],
+    "compatibility": {
+      "backend": [
+        "Node.js",
+        "Spring Boot"
+      ],
+      "database": [
+        "MongoDB",
+        "PostgreSQL",
+        "MySQL"
+      ],
+      "cloud": [
+        "AWS",
+        "Azure",
+        "Google Cloud"
+      ]
+    },
+    "learningCurve": "Intermediate",
+    "scalability": "Enterprise",
+    "popularity": 98,
+    "recommendationScore": 98,
+    "enterpriseReady": true,
+    "openSource": true,
+    "license": "Open Source",
+    "officialWebsite": "https://react.dev",
+    "documentationUrl": "https://react.dev/learn",
+    "maturity": "Mature",
+    "lastUpdated": "2026-01-01"
+  },
+  {
+    "id": "nodejs",
+    "name": "Node.js",
+    "category": "Language",
+    "description": "JavaScript runtime",
+    "tags": [
+      "language"
+    ],
+    "bestUseCases": [
+      "Enterprise Applications"
+    ],
+    "supportedProjectTypes": [
+      "Web Development",
+      "AI",
+      "Enterprise"
+    ],
+    "strengths": [
+      "Reliable",
+      "Scalable"
+    ],
+    "weaknesses": [
+      "Project dependent"
+    ],
+    "alternatives": [],
+    "compatibility": {
+      "cloud": [
+        "AWS",
+        "Azure",
+        "Google Cloud"
+      ]
+    },
+    "learningCurve": "Intermediate",
+    "scalability": "Enterprise",
+    "popularity": 90,
+    "recommendationScore": 90,
+    "enterpriseReady": true,
+    "openSource": true,
+    "license": "Open Source",
+    "officialWebsite": "https://example.com/nodejs",
+    "documentationUrl": "https://docs.example.com/nodejs",
+    "maturity": "Mature",
+    "lastUpdated": "2026-01-01"
+  },
+  {
+    "id": "express",
+    "name": "Express",
+    "category": "Framework",
+    "description": "Node.js web framework",
+    "tags": [
+      "framework"
+    ],
+    "bestUseCases": [
+      "Enterprise Applications"
+    ],
+    "supportedProjectTypes": [
+      "Web Development",
+      "AI",
+      "Enterprise"
+    ],
+    "strengths": [
+      "Reliable",
+      "Scalable"
+    ],
+    "weaknesses": [
+      "Project dependent"
+    ],
+    "alternatives": [],
+    "compatibility": {
+      "cloud": [
+        "AWS",
+        "Azure",
+        "Google Cloud"
+      ]
+    },
+    "learningCurve": "Intermediate",
+    "scalability": "Enterprise",
+    "popularity": 90,
+    "recommendationScore": 90,
+    "enterpriseReady": true,
+    "openSource": true,
+    "license": "Open Source",
+    "officialWebsite": "https://example.com/express",
+    "documentationUrl": "https://docs.example.com/express",
+    "maturity": "Mature",
+    "lastUpdated": "2026-01-01"
+  },
+  {
+    "id": "typescript",
+    "name": "TypeScript",
+    "category": "Language",
+    "description": "Typed JavaScript",
+    "tags": [
+      "language"
+    ],
+    "bestUseCases": [
+      "Enterprise Applications"
+    ],
+    "supportedProjectTypes": [
+      "Web Development",
+      "AI",
+      "Enterprise"
+    ],
+    "strengths": [
+      "Reliable",
+      "Scalable"
+    ],
+    "weaknesses": [
+      "Project dependent"
+    ],
+    "alternatives": [],
+    "compatibility": {
+      "cloud": [
+        "AWS",
+        "Azure",
+        "Google Cloud"
+      ]
+    },
+    "learningCurve": "Intermediate",
+    "scalability": "Enterprise",
+    "popularity": 90,
+    "recommendationScore": 90,
+    "enterpriseReady": true,
+    "openSource": true,
+    "license": "Open Source",
+    "officialWebsite": "https://example.com/typescript",
+    "documentationUrl": "https://docs.example.com/typescript",
+    "maturity": "Mature",
+    "lastUpdated": "2026-01-01"
+  },
+  {
+    "id": "javascript",
+    "name": "JavaScript",
+    "category": "Language",
+    "description": "Programming language",
+    "tags": [
+      "language"
+    ],
+    "bestUseCases": [
+      "Enterprise Applications"
+    ],
+    "supportedProjectTypes": [
+      "Web Development",
+      "AI",
+      "Enterprise"
+    ],
+    "strengths": [
+      "Reliable",
+      "Scalable"
+    ],
+    "weaknesses": [
+      "Project dependent"
+    ],
+    "alternatives": [],
+    "compatibility": {
+      "cloud": [
+        "AWS",
+        "Azure",
+        "Google Cloud"
+      ]
+    },
+    "learningCurve": "Intermediate",
+    "scalability": "Enterprise",
+    "popularity": 90,
+    "recommendationScore": 90,
+    "enterpriseReady": true,
+    "openSource": true,
+    "license": "Open Source",
+    "officialWebsite": "https://example.com/javascript",
+    "documentationUrl": "https://docs.example.com/javascript",
+    "maturity": "Mature",
+    "lastUpdated": "2026-01-01"
+  },
+  {
+    "id": "python",
+    "name": "Python",
+    "category": "AI/ML",
+    "description": "Programming language",
+    "tags": [
+      "ai/ml"
+    ],
+    "bestUseCases": [
+      "Enterprise Applications"
+    ],
+    "supportedProjectTypes": [
+      "Web Development",
+      "AI",
+      "Enterprise"
+    ],
+    "strengths": [
+      "Reliable",
+      "Scalable"
+    ],
+    "weaknesses": [
+      "Project dependent"
+    ],
+    "alternatives": [],
+    "compatibility": {
+      "cloud": [
+        "AWS",
+        "Azure",
+        "Google Cloud"
+      ]
+    },
+    "learningCurve": "Intermediate",
+    "scalability": "Enterprise",
+    "popularity": 90,
+    "recommendationScore": 90,
+    "enterpriseReady": true,
+    "openSource": true,
+    "license": "Open Source",
+    "officialWebsite": "https://example.com/python",
+    "documentationUrl": "https://docs.example.com/python",
+    "maturity": "Mature",
+    "lastUpdated": "2026-01-01"
+  },
+  {
+    "id": "java",
+    "name": "Java",
+    "category": "Language",
+    "description": "Programming language",
+    "tags": [
+      "language"
+    ],
+    "bestUseCases": [
+      "Enterprise Applications"
+    ],
+    "supportedProjectTypes": [
+      "Web Development",
+      "AI",
+      "Enterprise"
+    ],
+    "strengths": [
+      "Reliable",
+      "Scalable"
+    ],
+    "weaknesses": [
+      "Project dependent"
+    ],
+    "alternatives": [],
+    "compatibility": {
+      "cloud": [
+        "AWS",
+        "Azure",
+        "Google Cloud"
+      ]
+    },
+    "learningCurve": "Intermediate",
+    "scalability": "Enterprise",
+    "popularity": 90,
+    "recommendationScore": 90,
+    "enterpriseReady": true,
+    "openSource": true,
+    "license": "Open Source",
+    "officialWebsite": "https://example.com/java",
+    "documentationUrl": "https://docs.example.com/java",
+    "maturity": "Mature",
+    "lastUpdated": "2026-01-01"
+  },
+  {
+    "id": "springboot",
+    "name": "Spring Boot",
+    "category": "Framework",
+    "description": "Java framework",
+    "tags": [
+      "framework"
+    ],
+    "bestUseCases": [
+      "Enterprise Applications"
+    ],
+    "supportedProjectTypes": [
+      "Web Development",
+      "AI",
+      "Enterprise"
+    ],
+    "strengths": [
+      "Reliable",
+      "Scalable"
+    ],
+    "weaknesses": [
+      "Project dependent"
+    ],
+    "alternatives": [],
+    "compatibility": {
+      "cloud": [
+        "AWS",
+        "Azure",
+        "Google Cloud"
+      ]
+    },
+    "learningCurve": "Intermediate",
+    "scalability": "Enterprise",
+    "popularity": 90,
+    "recommendationScore": 90,
+    "enterpriseReady": true,
+    "openSource": true,
+    "license": "Open Source",
+    "officialWebsite": "https://example.com/springboot",
+    "documentationUrl": "https://docs.example.com/springboot",
+    "maturity": "Mature",
+    "lastUpdated": "2026-01-01"
+  },
+  {
+    "id": "dotnet",
+    "name": "ASP.NET Core",
+    "category": "Framework",
+    "description": ".NET web framework",
+    "tags": [
+      "framework"
+    ],
+    "bestUseCases": [
+      "Enterprise Applications"
+    ],
+    "supportedProjectTypes": [
+      "Web Development",
+      "AI",
+      "Enterprise"
+    ],
+    "strengths": [
+      "Reliable",
+      "Scalable"
+    ],
+    "weaknesses": [
+      "Project dependent"
+    ],
+    "alternatives": [],
+    "compatibility": {
+      "cloud": [
+        "AWS",
+        "Azure",
+        "Google Cloud"
+      ]
+    },
+    "learningCurve": "Intermediate",
+    "scalability": "Enterprise",
+    "popularity": 90,
+    "recommendationScore": 90,
+    "enterpriseReady": true,
+    "openSource": true,
+    "license": "Open Source",
+    "officialWebsite": "https://example.com/dotnet",
+    "documentationUrl": "https://docs.example.com/dotnet",
+    "maturity": "Mature",
+    "lastUpdated": "2026-01-01"
+  },
+  {
+    "id": "django",
+    "name": "Django",
+    "category": "Framework",
+    "description": "Python web framework",
+    "tags": [
+      "framework"
+    ],
+    "bestUseCases": [
+      "Enterprise Applications"
+    ],
+    "supportedProjectTypes": [
+      "Web Development",
+      "AI",
+      "Enterprise"
+    ],
+    "strengths": [
+      "Reliable",
+      "Scalable"
+    ],
+    "weaknesses": [
+      "Project dependent"
+    ],
+    "alternatives": [],
+    "compatibility": {
+      "cloud": [
+        "AWS",
+        "Azure",
+        "Google Cloud"
+      ]
+    },
+    "learningCurve": "Intermediate",
+    "scalability": "Enterprise",
+    "popularity": 90,
+    "recommendationScore": 90,
+    "enterpriseReady": true,
+    "openSource": true,
+    "license": "Open Source",
+    "officialWebsite": "https://example.com/django",
+    "documentationUrl": "https://docs.example.com/django",
+    "maturity": "Mature",
+    "lastUpdated": "2026-01-01"
+  },
+  {
+    "id": "fastapi",
+    "name": "FastAPI",
+    "category": "Framework",
+    "description": "Python API framework",
+    "tags": [
+      "framework"
+    ],
+    "bestUseCases": [
+      "Enterprise Applications"
+    ],
+    "supportedProjectTypes": [
+      "Web Development",
+      "AI",
+      "Enterprise"
+    ],
+    "strengths": [
+      "Reliable",
+      "Scalable"
+    ],
+    "weaknesses": [
+      "Project dependent"
+    ],
+    "alternatives": [],
+    "compatibility": {
+      "cloud": [
+        "AWS",
+        "Azure",
+        "Google Cloud"
+      ]
+    },
+    "learningCurve": "Intermediate",
+    "scalability": "Enterprise",
+    "popularity": 90,
+    "recommendationScore": 90,
+    "enterpriseReady": true,
+    "openSource": true,
+    "license": "Open Source",
+    "officialWebsite": "https://example.com/fastapi",
+    "documentationUrl": "https://docs.example.com/fastapi",
+    "maturity": "Mature",
+    "lastUpdated": "2026-01-01"
+  },
+  {
+    "id": "angular",
+    "name": "Angular",
+    "category": "Framework",
+    "description": "Frontend framework",
+    "tags": [
+      "framework"
+    ],
+    "bestUseCases": [
+      "Enterprise Applications"
+    ],
+    "supportedProjectTypes": [
+      "Web Development",
+      "AI",
+      "Enterprise"
+    ],
+    "strengths": [
+      "Reliable",
+      "Scalable"
+    ],
+    "weaknesses": [
+      "Project dependent"
+    ],
+    "alternatives": [],
+    "compatibility": {
+      "cloud": [
+        "AWS",
+        "Azure",
+        "Google Cloud"
+      ]
+    },
+    "learningCurve": "Intermediate",
+    "scalability": "Enterprise",
+    "popularity": 90,
+    "recommendationScore": 90,
+    "enterpriseReady": true,
+    "openSource": true,
+    "license": "Open Source",
+    "officialWebsite": "https://example.com/angular",
+    "documentationUrl": "https://docs.example.com/angular",
+    "maturity": "Mature",
+    "lastUpdated": "2026-01-01"
+  },
+  {
+    "id": "vue",
+    "name": "Vue",
+    "category": "Framework",
+    "description": "Frontend framework",
+    "tags": [
+      "framework"
+    ],
+    "bestUseCases": [
+      "Enterprise Applications"
+    ],
+    "supportedProjectTypes": [
+      "Web Development",
+      "AI",
+      "Enterprise"
+    ],
+    "strengths": [
+      "Reliable",
+      "Scalable"
+    ],
+    "weaknesses": [
+      "Project dependent"
+    ],
+    "alternatives": [],
+    "compatibility": {
+      "cloud": [
+        "AWS",
+        "Azure",
+        "Google Cloud"
+      ]
+    },
+    "learningCurve": "Intermediate",
+    "scalability": "Enterprise",
+    "popularity": 90,
+    "recommendationScore": 90,
+    "enterpriseReady": true,
+    "openSource": true,
+    "license": "Open Source",
+    "officialWebsite": "https://example.com/vue",
+    "documentationUrl": "https://docs.example.com/vue",
+    "maturity": "Mature",
+    "lastUpdated": "2026-01-01"
+  },
+  {
+    "id": "nextjs",
+    "name": "Next.js",
+    "category": "Framework",
+    "description": "React framework",
+    "tags": [
+      "framework"
+    ],
+    "bestUseCases": [
+      "Enterprise Applications"
+    ],
+    "supportedProjectTypes": [
+      "Web Development",
+      "AI",
+      "Enterprise"
+    ],
+    "strengths": [
+      "Reliable",
+      "Scalable"
+    ],
+    "weaknesses": [
+      "Project dependent"
+    ],
+    "alternatives": [],
+    "compatibility": {
+      "cloud": [
+        "AWS",
+        "Azure",
+        "Google Cloud"
+      ]
+    },
+    "learningCurve": "Intermediate",
+    "scalability": "Enterprise",
+    "popularity": 90,
+    "recommendationScore": 90,
+    "enterpriseReady": true,
+    "openSource": true,
+    "license": "Open Source",
+    "officialWebsite": "https://example.com/nextjs",
+    "documentationUrl": "https://docs.example.com/nextjs",
+    "maturity": "Mature",
+    "lastUpdated": "2026-01-01"
+  },
+  {
+    "id": "mongodb",
+    "name": "MongoDB",
+    "category": "Database",
+    "description": "NoSQL database",
+    "tags": [
+      "database"
+    ],
+    "bestUseCases": [
+      "Enterprise Applications"
+    ],
+    "supportedProjectTypes": [
+      "Web Development",
+      "AI",
+      "Enterprise"
+    ],
+    "strengths": [
+      "Reliable",
+      "Scalable"
+    ],
+    "weaknesses": [
+      "Project dependent"
+    ],
+    "alternatives": [],
+    "compatibility": {
+      "cloud": [
+        "AWS",
+        "Azure",
+        "Google Cloud"
+      ]
+    },
+    "learningCurve": "Intermediate",
+    "scalability": "Enterprise",
+    "popularity": 90,
+    "recommendationScore": 90,
+    "enterpriseReady": true,
+    "openSource": true,
+    "license": "Open Source",
+    "officialWebsite": "https://example.com/mongodb",
+    "documentationUrl": "https://docs.example.com/mongodb",
+    "maturity": "Mature",
+    "lastUpdated": "2026-01-01"
+  },
+  {
+    "id": "postgresql",
+    "name": "PostgreSQL",
+    "category": "Database",
+    "description": "SQL database",
+    "tags": [
+      "database"
+    ],
+    "bestUseCases": [
+      "Enterprise Applications"
+    ],
+    "supportedProjectTypes": [
+      "Web Development",
+      "AI",
+      "Enterprise"
+    ],
+    "strengths": [
+      "Reliable",
+      "Scalable"
+    ],
+    "weaknesses": [
+      "Project dependent"
+    ],
+    "alternatives": [],
+    "compatibility": {
+      "cloud": [
+        "AWS",
+        "Azure",
+        "Google Cloud"
+      ]
+    },
+    "learningCurve": "Intermediate",
+    "scalability": "Enterprise",
+    "popularity": 90,
+    "recommendationScore": 90,
+    "enterpriseReady": true,
+    "openSource": true,
+    "license": "Open Source",
+    "officialWebsite": "https://example.com/postgresql",
+    "documentationUrl": "https://docs.example.com/postgresql",
+    "maturity": "Mature",
+    "lastUpdated": "2026-01-01"
+  },
+  {
+    "id": "mysql",
+    "name": "MySQL",
+    "category": "Database",
+    "description": "SQL database",
+    "tags": [
+      "database"
+    ],
+    "bestUseCases": [
+      "Enterprise Applications"
+    ],
+    "supportedProjectTypes": [
+      "Web Development",
+      "AI",
+      "Enterprise"
+    ],
+    "strengths": [
+      "Reliable",
+      "Scalable"
+    ],
+    "weaknesses": [
+      "Project dependent"
+    ],
+    "alternatives": [],
+    "compatibility": {
+      "cloud": [
+        "AWS",
+        "Azure",
+        "Google Cloud"
+      ]
+    },
+    "learningCurve": "Intermediate",
+    "scalability": "Enterprise",
+    "popularity": 90,
+    "recommendationScore": 90,
+    "enterpriseReady": true,
+    "openSource": true,
+    "license": "Open Source",
+    "officialWebsite": "https://example.com/mysql",
+    "documentationUrl": "https://docs.example.com/mysql",
+    "maturity": "Mature",
+    "lastUpdated": "2026-01-01"
+  },
+  {
+    "id": "redis",
+    "name": "Redis",
+    "category": "Database",
+    "description": "In-memory database",
+    "tags": [
+      "database"
+    ],
+    "bestUseCases": [
+      "Enterprise Applications"
+    ],
+    "supportedProjectTypes": [
+      "Web Development",
+      "AI",
+      "Enterprise"
+    ],
+    "strengths": [
+      "Reliable",
+      "Scalable"
+    ],
+    "weaknesses": [
+      "Project dependent"
+    ],
+    "alternatives": [],
+    "compatibility": {
+      "cloud": [
+        "AWS",
+        "Azure",
+        "Google Cloud"
+      ]
+    },
+    "learningCurve": "Intermediate",
+    "scalability": "Enterprise",
+    "popularity": 90,
+    "recommendationScore": 90,
+    "enterpriseReady": true,
+    "openSource": true,
+    "license": "Open Source",
+    "officialWebsite": "https://example.com/redis",
+    "documentationUrl": "https://docs.example.com/redis",
+    "maturity": "Mature",
+    "lastUpdated": "2026-01-01"
+  },
+  {
+    "id": "aws",
+    "name": "AWS",
+    "category": "Cloud",
+    "description": "Cloud platform",
+    "tags": [
+      "cloud"
+    ],
+    "bestUseCases": [
+      "Enterprise Applications"
+    ],
+    "supportedProjectTypes": [
+      "Web Development",
+      "AI",
+      "Enterprise"
+    ],
+    "strengths": [
+      "Reliable",
+      "Scalable"
+    ],
+    "weaknesses": [
+      "Project dependent"
+    ],
+    "alternatives": [],
+    "compatibility": {
+      "cloud": [
+        "AWS",
+        "Azure",
+        "Google Cloud"
+      ]
+    },
+    "learningCurve": "Intermediate",
+    "scalability": "Enterprise",
+    "popularity": 90,
+    "recommendationScore": 90,
+    "enterpriseReady": true,
+    "openSource": false,
+    "license": "Commercial",
+    "officialWebsite": "https://example.com/aws",
+    "documentationUrl": "https://docs.example.com/aws",
+    "maturity": "Mature",
+    "lastUpdated": "2026-01-01"
+  },
+  {
+    "id": "azure",
+    "name": "Azure",
+    "category": "Cloud",
+    "description": "Cloud platform",
+    "tags": [
+      "cloud"
+    ],
+    "bestUseCases": [
+      "Enterprise Applications"
+    ],
+    "supportedProjectTypes": [
+      "Web Development",
+      "AI",
+      "Enterprise"
+    ],
+    "strengths": [
+      "Reliable",
+      "Scalable"
+    ],
+    "weaknesses": [
+      "Project dependent"
+    ],
+    "alternatives": [],
+    "compatibility": {
+      "cloud": [
+        "AWS",
+        "Azure",
+        "Google Cloud"
+      ]
+    },
+    "learningCurve": "Intermediate",
+    "scalability": "Enterprise",
+    "popularity": 90,
+    "recommendationScore": 90,
+    "enterpriseReady": true,
+    "openSource": false,
+    "license": "Commercial",
+    "officialWebsite": "https://example.com/azure",
+    "documentationUrl": "https://docs.example.com/azure",
+    "maturity": "Mature",
+    "lastUpdated": "2026-01-01"
+  },
+  {
+    "id": "gcp",
+    "name": "Google Cloud",
+    "category": "Cloud",
+    "description": "Cloud platform",
+    "tags": [
+      "cloud"
+    ],
+    "bestUseCases": [
+      "Enterprise Applications"
+    ],
+    "supportedProjectTypes": [
+      "Web Development",
+      "AI",
+      "Enterprise"
+    ],
+    "strengths": [
+      "Reliable",
+      "Scalable"
+    ],
+    "weaknesses": [
+      "Project dependent"
+    ],
+    "alternatives": [],
+    "compatibility": {
+      "cloud": [
+        "AWS",
+        "Azure",
+        "Google Cloud"
+      ]
+    },
+    "learningCurve": "Intermediate",
+    "scalability": "Enterprise",
+    "popularity": 90,
+    "recommendationScore": 90,
+    "enterpriseReady": true,
+    "openSource": false,
+    "license": "Commercial",
+    "officialWebsite": "https://example.com/gcp",
+    "documentationUrl": "https://docs.example.com/gcp",
+    "maturity": "Mature",
+    "lastUpdated": "2026-01-01"
+  },
+  {
+    "id": "docker",
+    "name": "Docker",
+    "category": "DevOps",
+    "description": "Container platform",
+    "tags": [
+      "devops"
+    ],
+    "bestUseCases": [
+      "Enterprise Applications"
+    ],
+    "supportedProjectTypes": [
+      "Web Development",
+      "AI",
+      "Enterprise"
+    ],
+    "strengths": [
+      "Reliable",
+      "Scalable"
+    ],
+    "weaknesses": [
+      "Project dependent"
+    ],
+    "alternatives": [],
+    "compatibility": {
+      "cloud": [
+        "AWS",
+        "Azure",
+        "Google Cloud"
+      ]
+    },
+    "learningCurve": "Intermediate",
+    "scalability": "Enterprise",
+    "popularity": 90,
+    "recommendationScore": 90,
+    "enterpriseReady": true,
+    "openSource": true,
+    "license": "Open Source",
+    "officialWebsite": "https://example.com/docker",
+    "documentationUrl": "https://docs.example.com/docker",
+    "maturity": "Mature",
+    "lastUpdated": "2026-01-01"
+  },
+  {
+    "id": "kubernetes",
+    "name": "Kubernetes",
+    "category": "DevOps",
+    "description": "Container orchestration",
+    "tags": [
+      "devops"
+    ],
+    "bestUseCases": [
+      "Enterprise Applications"
+    ],
+    "supportedProjectTypes": [
+      "Web Development",
+      "AI",
+      "Enterprise"
+    ],
+    "strengths": [
+      "Reliable",
+      "Scalable"
+    ],
+    "weaknesses": [
+      "Project dependent"
+    ],
+    "alternatives": [],
+    "compatibility": {
+      "cloud": [
+        "AWS",
+        "Azure",
+        "Google Cloud"
+      ]
+    },
+    "learningCurve": "Intermediate",
+    "scalability": "Enterprise",
+    "popularity": 90,
+    "recommendationScore": 90,
+    "enterpriseReady": true,
+    "openSource": true,
+    "license": "Open Source",
+    "officialWebsite": "https://example.com/kubernetes",
+    "documentationUrl": "https://docs.example.com/kubernetes",
+    "maturity": "Mature",
+    "lastUpdated": "2026-01-01"
+  },
+  {
+    "id": "github-actions",
+    "name": "GitHub Actions",
+    "category": "DevOps",
+    "description": "CI/CD",
+    "tags": [
+      "devops"
+    ],
+    "bestUseCases": [
+      "Enterprise Applications"
+    ],
+    "supportedProjectTypes": [
+      "Web Development",
+      "AI",
+      "Enterprise"
+    ],
+    "strengths": [
+      "Reliable",
+      "Scalable"
+    ],
+    "weaknesses": [
+      "Project dependent"
+    ],
+    "alternatives": [],
+    "compatibility": {
+      "cloud": [
+        "AWS",
+        "Azure",
+        "Google Cloud"
+      ]
+    },
+    "learningCurve": "Intermediate",
+    "scalability": "Enterprise",
+    "popularity": 90,
+    "recommendationScore": 90,
+    "enterpriseReady": true,
+    "openSource": true,
+    "license": "Open Source",
+    "officialWebsite": "https://example.com/github-actions",
+    "documentationUrl": "https://docs.example.com/github-actions",
+    "maturity": "Mature",
+    "lastUpdated": "2026-01-01"
+  },
+  {
+    "id": "tensorflow",
+    "name": "TensorFlow",
+    "category": "AI/ML",
+    "description": "ML framework",
+    "tags": [
+      "ai/ml"
+    ],
+    "bestUseCases": [
+      "Enterprise Applications"
+    ],
+    "supportedProjectTypes": [
+      "Web Development",
+      "AI",
+      "Enterprise"
+    ],
+    "strengths": [
+      "Reliable",
+      "Scalable"
+    ],
+    "weaknesses": [
+      "Project dependent"
+    ],
+    "alternatives": [],
+    "compatibility": {
+      "cloud": [
+        "AWS",
+        "Azure",
+        "Google Cloud"
+      ]
+    },
+    "learningCurve": "Intermediate",
+    "scalability": "Enterprise",
+    "popularity": 90,
+    "recommendationScore": 90,
+    "enterpriseReady": true,
+    "openSource": true,
+    "license": "Open Source",
+    "officialWebsite": "https://example.com/tensorflow",
+    "documentationUrl": "https://docs.example.com/tensorflow",
+    "maturity": "Mature",
+    "lastUpdated": "2026-01-01"
+  },
+  {
+    "id": "pytorch",
+    "name": "PyTorch",
+    "category": "AI/ML",
+    "description": "ML framework",
+    "tags": [
+      "ai/ml"
+    ],
+    "bestUseCases": [
+      "Enterprise Applications"
+    ],
+    "supportedProjectTypes": [
+      "Web Development",
+      "AI",
+      "Enterprise"
+    ],
+    "strengths": [
+      "Reliable",
+      "Scalable"
+    ],
+    "weaknesses": [
+      "Project dependent"
+    ],
+    "alternatives": [],
+    "compatibility": {
+      "cloud": [
+        "AWS",
+        "Azure",
+        "Google Cloud"
+      ]
+    },
+    "learningCurve": "Intermediate",
+    "scalability": "Enterprise",
+    "popularity": 90,
+    "recommendationScore": 90,
+    "enterpriseReady": true,
+    "openSource": true,
+    "license": "Open Source",
+    "officialWebsite": "https://example.com/pytorch",
+    "documentationUrl": "https://docs.example.com/pytorch",
+    "maturity": "Mature",
+    "lastUpdated": "2026-01-01"
+  },
+  {
+    "id": "scikit-learn",
+    "name": "Scikit-learn",
+    "category": "AI/ML",
+    "description": "ML library",
+    "tags": [
+      "ai/ml"
+    ],
+    "bestUseCases": [
+      "Enterprise Applications"
+    ],
+    "supportedProjectTypes": [
+      "Web Development",
+      "AI",
+      "Enterprise"
+    ],
+    "strengths": [
+      "Reliable",
+      "Scalable"
+    ],
+    "weaknesses": [
+      "Project dependent"
+    ],
+    "alternatives": [],
+    "compatibility": {
+      "cloud": [
+        "AWS",
+        "Azure",
+        "Google Cloud"
+      ]
+    },
+    "learningCurve": "Intermediate",
+    "scalability": "Enterprise",
+    "popularity": 90,
+    "recommendationScore": 90,
+    "enterpriseReady": true,
+    "openSource": true,
+    "license": "Open Source",
+    "officialWebsite": "https://example.com/scikit-learn",
+    "documentationUrl": "https://docs.example.com/scikit-learn",
+    "maturity": "Mature",
+    "lastUpdated": "2026-01-01"
+  },
+  {
+    "id": "go",
+    "name": "Go",
+    "category": "Language",
+    "description": "Programming language",
+    "tags": [
+      "language"
+    ],
+    "bestUseCases": [
+      "Enterprise Applications"
+    ],
+    "supportedProjectTypes": [
+      "Web Development",
+      "AI",
+      "Enterprise"
+    ],
+    "strengths": [
+      "Reliable",
+      "Scalable"
+    ],
+    "weaknesses": [
+      "Project dependent"
+    ],
+    "alternatives": [],
+    "compatibility": {
+      "cloud": [
+        "AWS",
+        "Azure",
+        "Google Cloud"
+      ]
+    },
+    "learningCurve": "Intermediate",
+    "scalability": "Enterprise",
+    "popularity": 90,
+    "recommendationScore": 90,
+    "enterpriseReady": true,
+    "openSource": true,
+    "license": "Open Source",
+    "officialWebsite": "https://example.com/go",
+    "documentationUrl": "https://docs.example.com/go",
+    "maturity": "Mature",
+    "lastUpdated": "2026-01-01"
+  },
+  {
+    "id": "csharp",
+    "name": "C#",
+    "category": "Language",
+    "description": "Programming language",
+    "tags": [
+      "language"
+    ],
+    "bestUseCases": [
+      "Enterprise Applications"
+    ],
+    "supportedProjectTypes": [
+      "Web Development",
+      "AI",
+      "Enterprise"
+    ],
+    "strengths": [
+      "Reliable",
+      "Scalable"
+    ],
+    "weaknesses": [
+      "Project dependent"
+    ],
+    "alternatives": [],
+    "compatibility": {
+      "cloud": [
+        "AWS",
+        "Azure",
+        "Google Cloud"
+      ]
+    },
+    "learningCurve": "Intermediate",
+    "scalability": "Enterprise",
+    "popularity": 90,
+    "recommendationScore": 90,
+    "enterpriseReady": true,
+    "openSource": true,
+    "license": "Open Source",
+    "officialWebsite": "https://example.com/csharp",
+    "documentationUrl": "https://docs.example.com/csharp",
+    "maturity": "Mature",
+    "lastUpdated": "2026-01-01"
+  }
+]
