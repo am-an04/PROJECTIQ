@@ -1,0 +1,47 @@
+[
+  {
+    "technology": "React",
+    "steps": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "React Router"
+    ]
+  },
+  {
+    "technology": "Node.js",
+    "steps": [
+      "JavaScript",
+      "Node.js",
+      "Express.js",
+      "REST API"
+    ]
+  },
+  {
+    "technology": "MongoDB",
+    "steps": [
+      "Database Fundamentals",
+      "NoSQL",
+      "MongoDB"
+    ]
+  },
+  {
+    "technology": "Docker",
+    "steps": [
+      "Linux Basics",
+      "Containers",
+      "Docker"
+    ]
+  },
+  {
+    "technology": "Python",
+    "steps": [
+      "Python Basics",
+      "OOP",
+      "FastAPI",
+      "Machine Learning"
+    ]
+  }
+]

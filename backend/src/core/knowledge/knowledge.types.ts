@@ -86,3 +86,101 @@ export interface Technology {
 
   lastUpdated: string;
 }
+
+/* ===========================================================
+   Planning Knowledge Types
+=========================================================== */
+
+export interface DevelopmentPhase {
+
+  id: string;
+
+  title: string;
+
+  description: string;
+
+  applicableTo: Array<
+    "Technical" |
+    "Non-Technical" |
+    "Research"
+  >;
+
+  defaultDurationWeeks: number;
+
+  deliverables: string[];
+
+}
+
+export interface MilestoneTemplate {
+
+  id: string;
+
+  phase: string;
+
+  title: string;
+
+  description: string;
+
+}
+
+export interface TaskTemplate {
+
+  id: string;
+
+  milestone: string;
+
+  title: string;
+
+  description: string;
+
+  estimatedHours: number;
+
+  priority: "Low" | "Medium" | "High" | "Critical";
+
+}
+
+export interface LearningPathTemplate {
+
+  technology: string;
+
+  steps: string[];
+
+}
+
+export interface DurationEstimate {
+
+  phase: string;
+
+  weeks: number;
+
+}
+
+export interface ResourceTemplate {
+
+  projectType: string;
+
+  recommendedRoles: string[];
+
+  recommendedTools: string[];
+
+}
+
+export interface CostTemplate {
+
+  projectType: string;
+
+  estimatedCost: number;
+
+  currency: string;
+
+}
+
+export interface RiskTemplate {
+
+  title: string;
+
+  severity: "Low" | "Medium" | "High";
+
+  mitigation: string;
+
+}

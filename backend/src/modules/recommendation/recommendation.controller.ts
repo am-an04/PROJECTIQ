@@ -11,6 +11,7 @@ export class RecommendationController {
     res: Response,
     next: NextFunction
   ) {
+    console.log("✅ Recommendation Controller Hit");
     try {
 
       const recommendation =

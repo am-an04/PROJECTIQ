@@ -20,7 +20,8 @@ export class RecommendationMatcher {
 
     const added = new Set<string>();
 
-    const technologies = KnowledgeService.getAll();
+    const technologies =
+    KnowledgeService.getTechnologies();
 
     console.log(
       "Knowledge Base Size:",

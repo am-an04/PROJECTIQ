@@ -1,162 +1,162 @@
 // src/core/knowledge/knowledge.service.ts
 
 import technologies from "./data/technologies.json" with { type: "json" };
+import technologyRoles from "./data/technology-roles.json" with { type: "json" };
+
+import developmentPhases from "./data/planning/development-phases.json" with { type: "json" };
+import milestoneTemplates from "./data/planning/milestone-templates.json" with { type: "json" };
+import learningPaths from "./data/planning/learning-paths.json" with { type: "json" };
+import durationEstimates from "./data/planning/duration-estimates.json" with { type: "json" };
 
 import {
   Technology,
-  TechnologyCategory,
-  TechnologyCompatibility,
+  TechnologyRole,
+  DevelopmentPhase,
+  MilestoneTemplate,
+  LearningPathTemplate,
+  DurationEstimate,
 } from "./knowledge.types.js";
 
 export class KnowledgeService {
-  private static readonly technologyData =
-    technologies as Technology[];
 
-  static getAll(): Technology[] {
-    return this.technologyData;
+  /* ======================================================
+     Technology Knowledge
+  ====================================================== */
+
+  static getTechnologies(): Technology[] {
+    return technologies as Technology[];
   }
 
-  static getById(id: string): Technology | undefined {
-    return this.technologyData.find(
-      (technology) =>
-        technology.id.toLowerCase() === id.toLowerCase()
+  static getTechnologyRoles(): Record<string, TechnologyRole> {
+    return technologyRoles as Record<string, TechnologyRole>;
+  }
+
+  static getTechnologyById(
+    id: string
+  ): Technology | undefined {
+
+    return this.getTechnologies().find(
+      technology => technology.id === id
     );
+
   }
 
-  static getByName(name: string): Technology | undefined {
-    return this.technologyData.find(
-      (technology) =>
-        technology.name.toLowerCase() === name.toLowerCase()
-    );
-  }
-
-  static getByCategory(
-    category: TechnologyCategory
-  ): Technology[] {
-    return this.technologyData.filter(
-      (technology) => technology.category === category
-    );
-  }
-
-  static search(keyword: string): Technology[] {
-    const query = keyword.toLowerCase();
-
-    return this.technologyData.filter((technology) => {
-      return (
-        technology.name.toLowerCase().includes(query) ||
-        technology.description.toLowerCase().includes(query) ||
-        technology.tags.some((tag) =>
-          tag.toLowerCase().includes(query)
-        )
-      );
-    });
-  }
-
-  static searchByTags(tags: string[]): Technology[] {
-  const searchTags = tags.map(tag => tag.toLowerCase());
-
-  return this.technologyData.filter(technology =>
-    searchTags.some(tag =>
-      technology.tags.some(
-        technologyTag => technologyTag.toLowerCase() === tag
-      )
-    )
-  );
-}
-
-  static getAlternatives(name: string): string[] {
-    const technology = this.getByName(name);
-
-    return technology?.alternatives ?? [];
-  }
-
-  static getCompatibility(
+  static getTechnologyByName(
     name: string
-  ): TechnologyCompatibility | null {
-    const technology = this.getByName(name);
+  ): Technology | undefined {
 
-    return technology?.compatibility ?? null;
-  }
-
-  static getEnterpriseTechnologies(): Technology[] {
-    return this.technologyData.filter(
-      (technology) => technology.enterpriseReady
+    return this.getTechnologies().find(
+      technology =>
+        technology.name.toLowerCase() ===
+        name.toLowerCase()
     );
+
   }
 
-  static getOpenSourceTechnologies(): Technology[] {
-    return this.technologyData.filter(
-      (technology) => technology.openSource
-    );
-  }
-
-  static getTopRecommended(
-    limit = 10
+  static getTechnologiesByCategory(
+    category: Technology["category"]
   ): Technology[] {
-    return [...this.technologyData]
-      .sort(
-        (a, b) =>
-          b.recommendationScore - a.recommendationScore
-      )
-      .slice(0, limit);
+
+    return this.getTechnologies().filter(
+      technology =>
+        technology.category === category
+    );
+
   }
 
-static validateCompatibility(
-  source: string,
-  target: string
+  static getTechnologiesByRole(
+    role: keyof ReturnType<typeof KnowledgeService.getTechnologyRoles>
+  ): Technology[] {
+
+    const mapping = this.getTechnologyRoles();
+
+    const category = mapping[role];
+
+    if (!category) {
+      return [];
+    }
+
+    return this.getTechnologies().filter(
+      technology =>
+        technology.category === category
+    );
+
+  }
+
+  static searchTechnologies(
+    keyword: string
+  ): Technology[] {
+
+    const search = keyword.toLowerCase();
+
+    return this.getTechnologies().filter((technology) =>
+
+      technology.name.toLowerCase().includes(search) ||
+
+      technology.description.toLowerCase().includes(search) ||
+
+      technology.tags.some(tag =>
+        tag.toLowerCase().includes(search)
+      ) ||
+
+      technology.bestUseCases.some(useCase =>
+        useCase.toLowerCase().includes(search)
+      )
+
+    );
+
+  }
+
+  static validateCompatibility(
+  sourceTechnology: string,
+  targetTechnology: string
 ): boolean {
 
-  const sourceTechnology =
-    this.getByName(source);
+  const technology =
+    this.getTechnologyByName(sourceTechnology);
 
-  const targetTechnology =
-    this.getByName(target);
-
-  if (
-    !sourceTechnology ||
-    !targetTechnology
-  ) {
+  if (!technology) {
     return false;
   }
 
-  // -----------------------------------------
-  // Source -> Target Compatibility
-  // -----------------------------------------
+  const compatibility = technology.compatibility;
 
-  const sourceCompatible =
-    Object.values(
-      sourceTechnology.compatibility
-    )
-      .flat()
-      .some(
-        item =>
-          item.toLowerCase() ===
-          target.toLowerCase()
-      );
+  const supported: string[] = [];
 
-  // -----------------------------------------
-  // Target -> Source Compatibility
-  // -----------------------------------------
+  Object.values(compatibility).forEach((items) => {
 
-  const targetCompatible =
-    Object.values(
-      targetTechnology.compatibility
-    )
-      .flat()
-      .some(
-        item =>
-          item.toLowerCase() ===
-          source.toLowerCase()
-      );
+    if (Array.isArray(items)) {
+      supported.push(...items);
+    }
 
-  // -----------------------------------------
-  // Compatible if either direction matches
-  // -----------------------------------------
+  });
 
-  return (
-    sourceCompatible ||
-    targetCompatible
+  return supported.some(
+    technology =>
+      technology.toLowerCase() ===
+      targetTechnology.toLowerCase()
   );
 
 }
+
+  /* ======================================================
+     Planning Knowledge
+  ====================================================== */
+
+  static getDevelopmentPhases(): DevelopmentPhase[] {
+    return developmentPhases as DevelopmentPhase[];
+  }
+
+  static getMilestoneTemplates(): MilestoneTemplate[] {
+    return milestoneTemplates as MilestoneTemplate[];
+  }
+
+  static getLearningPaths(): LearningPathTemplate[] {
+    return learningPaths as LearningPathTemplate[];
+  }
+
+  static getDurationEstimates(): DurationEstimate[] {
+    return durationEstimates as DurationEstimate[];
+  }
+
 }

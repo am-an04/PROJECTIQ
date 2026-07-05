@@ -1,0 +1,82 @@
+[
+  {
+    "id": "requirement-analysis",
+    "title": "Requirement Analysis",
+    "description": "Analyze project goals, scope, stakeholders and functional requirements.",
+    "applicableTo": [
+      "Technical",
+      "Non-Technical",
+      "Research"
+    ],
+    "defaultDurationWeeks": 1,
+    "deliverables": [
+      "Requirement Specification",
+      "Project Scope Document"
+    ]
+  },
+  {
+    "id": "planning",
+    "title": "Project Planning",
+    "description": "Prepare roadmap, milestones and execution strategy.",
+    "applicableTo": [
+      "Technical",
+      "Non-Technical",
+      "Research"
+    ],
+    "defaultDurationWeeks": 1,
+    "deliverables": [
+      "Roadmap",
+      "Milestones"
+    ]
+  },
+  {
+    "id": "development",
+    "title": "Development",
+    "description": "Develop the complete project.",
+    "applicableTo": [
+      "Technical"
+    ],
+    "defaultDurationWeeks": 5,
+    "deliverables": [
+      "Working Application"
+    ]
+  },
+  {
+    "id": "testing",
+    "title": "Testing",
+    "description": "Test all implemented features.",
+    "applicableTo": [
+      "Technical"
+    ],
+    "defaultDurationWeeks": 2,
+    "deliverables": [
+      "Testing Report"
+    ]
+  },
+  {
+    "id": "deployment",
+    "title": "Deployment",
+    "description": "Deploy the project into production.",
+    "applicableTo": [
+      "Technical"
+    ],
+    "defaultDurationWeeks": 1,
+    "deliverables": [
+      "Production Deployment"
+    ]
+  },
+  {
+    "id": "evaluation",
+    "title": "Evaluation",
+    "description": "Evaluate project outcomes and identify improvements.",
+    "applicableTo": [
+      "Technical",
+      "Non-Technical",
+      "Research"
+    ],
+    "defaultDurationWeeks": 1,
+    "deliverables": [
+      "Evaluation Report"
+    ]
+  }
+]

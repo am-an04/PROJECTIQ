@@ -8,7 +8,7 @@ import { errorHandler } from "./middleware/error.middleware.js";
 import { projectRoutes } from "./modules/project/index.js";
 import authRoutes from "./modules/auth/index.js";
 import recommendationRoutes from "./modules/recommendation/index.js";
-
+import planningRoutes from "./modules/planning/planning.routes.js";
 const app = express();
 
 app.use(cors());
@@ -26,9 +26,13 @@ app.use(
     "/api/v1/auth",
     authRoutes
 );
+app.use(
+  "/api/v1/planning",
+  planningRoutes
+);
 app.use("/api/v1/health", healthRoutes);
 app.use("/api/v1/projects", projectRoutes);
-app.use("/api/v1/recommendations", recommendationRoutes);
+app.use("/api/v1/recommendation", recommendationRoutes);
 app.use(notFoundHandler);
 app.use(errorHandler);
 

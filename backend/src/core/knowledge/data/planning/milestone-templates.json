@@ -1,0 +1,38 @@
+[
+  {
+    "id": "project-setup",
+    "phase": "planning",
+    "title": "Project Setup",
+    "description": "Initialize repository and project structure."
+  },
+  {
+    "id": "backend-development",
+    "phase": "development",
+    "title": "Backend Development",
+    "description": "Develop backend services and APIs."
+  },
+  {
+    "id": "frontend-development",
+    "phase": "development",
+    "title": "Frontend Development",
+    "description": "Develop the user interface."
+  },
+  {
+    "id": "database-design",
+    "phase": "development",
+    "title": "Database Design",
+    "description": "Design and implement the database."
+  },
+  {
+    "id": "integration-testing",
+    "phase": "testing",
+    "title": "Integration Testing",
+    "description": "Validate complete system integration."
+  },
+  {
+    "id": "production-release",
+    "phase": "deployment",
+    "title": "Production Release",
+    "description": "Release the project into production."
+  }
+]
