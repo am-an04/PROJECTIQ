@@ -29,3 +29,4 @@ export const errorHandler = (
 
   return res.status(500).json(response);
 };
+

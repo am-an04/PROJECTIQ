@@ -1,0 +1,38 @@
+{
+  "React": "Frontend",
+  "Angular": "Frontend",
+  "Vue": "Frontend",
+  "Next.js": "Frontend",
+
+  "Node.js": "Language",
+  "Express": "Backend",
+  "Spring Boot": "Backend",
+  "ASP.NET Core": "Backend",
+  "Django": "Backend",
+  "FastAPI": "Backend",
+
+  "JavaScript": "Language",
+  "TypeScript": "Language",
+  "Java": "Language",
+  "Python": "Language",
+  "Go": "Language",
+  "C#": "Language",
+
+  "MongoDB": "Database",
+  "PostgreSQL": "Database",
+  "MySQL": "Database",
+
+  "Redis": "Cache",
+
+  "AWS": "Cloud",
+  "Azure": "Cloud",
+  "Google Cloud": "Cloud",
+
+  "Docker": "Containerization",
+  "Kubernetes": "Orchestration",
+  "GitHub Actions": "CI/CD",
+
+  "TensorFlow": "AI Framework",
+  "PyTorch": "AI Framework",
+  "Scikit-learn": "AI Framework"
+}

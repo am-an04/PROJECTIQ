@@ -1,0 +1,26 @@
+[
+  {
+    "phase": "Requirement Analysis",
+    "weeks": 1
+  },
+  {
+    "phase": "Project Planning",
+    "weeks": 1
+  },
+  {
+    "phase": "Development",
+    "weeks": 5
+  },
+  {
+    "phase": "Testing",
+    "weeks": 2
+  },
+  {
+    "phase": "Deployment",
+    "weeks": 1
+  },
+  {
+    "phase": "Evaluation",
+    "weeks": 1
+  }
+]
