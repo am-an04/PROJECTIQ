@@ -1,0 +1,42 @@
+[
+  {
+    "id": "monolith",
+    "name": "Monolithic",
+    "description": "Single deployable application.",
+    "suitableFor": {
+      "minComplexity": 1,
+      "minWeeks": 0,
+      "scalable": false
+    }
+  },
+  {
+    "id": "layered",
+    "name": "Layered",
+    "description": "Presentation, Business and Data layers.",
+    "suitableFor": {
+      "minComplexity": 2,
+      "minWeeks": 6,
+      "scalable": true
+    }
+  },
+  {
+    "id": "microservices",
+    "name": "Microservices",
+    "description": "Distributed independently deployable services.",
+    "suitableFor": {
+      "minComplexity": 4,
+      "minWeeks": 18,
+      "scalable": true
+    }
+  },
+  {
+    "id": "event-driven",
+    "name": "Event Driven",
+    "description": "Asynchronous event-based architecture.",
+    "suitableFor": {
+      "minComplexity": 5,
+      "minWeeks": 24,
+      "scalable": true
+    }
+  }
+]

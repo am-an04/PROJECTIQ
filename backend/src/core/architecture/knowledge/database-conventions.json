@@ -1,0 +1,4 @@
+{
+  "pluralizeCollections": true,
+  "namingConvention": "camelCase"
+}

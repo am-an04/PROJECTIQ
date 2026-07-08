@@ -1,0 +1,33 @@
+{
+  "User Authentication": "User",
+  "Authentication": "User",
+
+  "Project Planning": "Project",
+  "Project Management": "Project",
+  "Project Evaluation": "Project",
+
+  "Requirement Analysis": "Requirement",
+  "Requirement Management": "Requirement",
+
+  "Architecture Generation": "Architecture",
+  "Architecture Design": "Architecture",
+
+  "Recommendation Engine": "Recommendation",
+
+  "Evaluation": "Evaluation",
+
+  "Report Generation": "Report",
+  "Reporting": "Report",
+
+  "Notification": "Notification",
+
+  "Dashboard": "Dashboard",
+
+  "Analytics": "Analytics",
+
+  "Payment": "Payment",
+
+  "Order Management": "Order",
+
+  "Inventory Management": "Inventory"
+}

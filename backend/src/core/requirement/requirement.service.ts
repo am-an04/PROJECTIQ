@@ -1,5 +1,3 @@
-// src/core/requirement/requirement.service.ts
-
 import { PreprocessingService } from "../preprocessing/index.js";
 
 import {
@@ -9,234 +7,340 @@ import {
   DetectedDomain,
 } from "./requirement.types.js";
 
+import {
+  FUNCTIONAL_KEYWORDS,
+  NON_FUNCTIONAL_KEYWORDS,
+  IGNORE_WORDS,
+} from "./requirement.constants.js";
+
+import {
+  BUSINESS_ENTITY_KEYWORDS,
+} from "./requirement.entities.js";
+
+import {
+  DOMAIN_KEYWORDS,
+} from "./requirement.domains.js";
+
+import {
+  extractConstraints,
+  findMissingConstraints,
+  calculateComplexity,
+  calculateCompleteness,
+  normalizeTokens,
+  unique,
+} from "./requirement.helpers.js";
+
 export class RequirementService {
 
-  private static readonly FUNCTIONAL_KEYWORDS = [
-    "authentication",
-    "login",
-    "payment",
-    "payments",
-    "dashboard",
-    "analytics",
-    "tracking",
-    "notification",
-    "notifications",
-    "chat",
-    "booking",
-    "appointment",
-    "search",
-    "profile",
-    "admin",
-    "report",
-    "order",
-    "billing",
-    "management",
-  ];
+  /**
+   * =====================================================
+   * Functional Requirements
+   * =====================================================
+   */
 
-  private static readonly NON_FUNCTIONAL_KEYWORDS = [
-    "security",
-    "performance",
-    "availability",
-    "scalability",
-    "responsive",
-    "maintainable",
-    "reliable",
-    "fast",
-  ];
+  private static extractFunctionalRequirements(
+    tokens: string[]
+  ): string[] {
 
-  private static readonly DOMAIN_KEYWORDS: Record<string, string[]> = {
+    const requirements = new Set<string>();
 
-    "Web Development": [
-      "website",
-      "web",
-      "frontend",
-      "backend",
-      "dashboard",
-      "authentication",
-      "login",
-      "profile",
-      "admin",
-      "booking",
-      "appointment",
-      "analytics",
-      "notification",
-      "notifications",
-      "api",
-      "management",
-    ],
+    for (const token of tokens) {
 
-    "Artificial Intelligence": [
-      "ai",
-      "artificial",
-      "intelligence",
-      "machine",
-      "learning",
-      "prediction",
-      "model",
-    ],
+      if (
+        FUNCTIONAL_KEYWORDS.includes(token)
+      ) {
 
-    "Healthcare": [
-      "hospital",
-      "doctor",
-      "patient",
-      "medical",
-      "clinic",
-      "health",
-    ],
-
-    "ECommerce": [
-      "shopping",
-      "cart",
-      "product",
-      "order",
-      "payment",
-      "delivery",
-      "inventory",
-    ],
-
-    "Education": [
-      "student",
-      "teacher",
-      "course",
-      "exam",
-      "learning",
-    ],
-  };
-
-  static analyze(text: string): RequirementAnalysis {
-
-    const processed =
-      PreprocessingService.process(text);
-
-    const tokens =
-      processed.uniqueTokens;
-
-    const functionalRequirements =
-      tokens.filter(token =>
-        this.FUNCTIONAL_KEYWORDS.includes(token)
-      );
-
-    const nonFunctionalRequirements =
-      tokens.filter(token =>
-        this.NON_FUNCTIONAL_KEYWORDS.includes(token)
-      );
-
-    const detectedDomains: DetectedDomain[] = [];
-
-    for (const [domain, keywords] of Object.entries(
-      this.DOMAIN_KEYWORDS
-    )) {
-
-      const matched =
-        keywords.filter(keyword =>
-          tokens.includes(keyword)
-        );
-
-      if (matched.length > 0) {
-
-        detectedDomains.push({
-
-          name: domain,
-
-          confidence: Math.round(
-            (matched.length / keywords.length) * 100
-          ),
-
-        });
+        requirements.add(token);
 
       }
 
     }
 
-    // Automatically classify Healthcare systems as Web Development
-    const hasHealthcare =
-      detectedDomains.some(
-        domain => domain.name === "Healthcare"
-      );
+    return [...requirements];
 
-    const hasWebDevelopment =
-      detectedDomains.some(
-        domain => domain.name === "Web Development"
-      );
+  }
 
-    if (
-      hasHealthcare &&
-      !hasWebDevelopment
+  /**
+   * =====================================================
+   * Non Functional
+   * =====================================================
+   */
+
+  private static extractNonFunctionalRequirements(
+    tokens: string[]
+  ): string[] {
+
+    const requirements = new Set<string>();
+
+    for (const token of tokens) {
+
+      if (
+        NON_FUNCTIONAL_KEYWORDS.includes(token)
+      ) {
+
+        requirements.add(token);
+
+      }
+
+    }
+
+    return [...requirements];
+
+  }
+
+  /**
+   * =====================================================
+   * Business Entities
+   * =====================================================
+   */
+
+  private static extractBusinessEntities(
+    tokens: string[]
+  ): string[] {
+
+    const entities = new Set<string>();
+
+    for (const token of tokens) {
+
+      if (token.length < 3) {
+
+        continue;
+
+      }
+
+      if (
+        IGNORE_WORDS.includes(token)
+      ) {
+
+        continue;
+
+      }
+
+      if (
+        NON_FUNCTIONAL_KEYWORDS.includes(token)
+      ) {
+
+        continue;
+
+      }
+
+      if (
+        BUSINESS_ENTITY_KEYWORDS.includes(token)
+      ) {
+
+        entities.add(token);
+
+        continue;
+
+      }
+
+      if (/^[a-z][a-z0-9-]*$/i.test(token)) {
+
+        entities.add(token);
+
+      }
+
+    }
+
+    return [...entities];
+
+  }
+
+  /**
+   * =====================================================
+   * Domain Detection
+   * =====================================================
+   */
+
+  private static detectDomains(
+    tokens: string[]
+  ): DetectedDomain[] {
+
+    const detected: DetectedDomain[] = [];
+
+    for (
+
+      const [domain, keywords]
+
+      of Object.entries(
+        DOMAIN_KEYWORDS
+      )
+
     ) {
 
-      detectedDomains.push({
+      const matched =
 
-        name: "Web Development",
+        keywords.filter(keyword =>
 
-        confidence: 80,
+          tokens.includes(keyword)
+
+        );
+
+      if (matched.length === 0) {
+
+        continue;
+
+      }
+
+      detected.push({
+
+        name: domain,
+
+        confidence: Math.round(
+
+          (matched.length /
+
+            keywords.length) * 100
+
+        )
 
       });
 
     }
 
-    const constraints: ProjectConstraints = {};
+    return detected;
 
-    const lower =
-      processed.normalizedText;
+  }
 
-    const budget =
-      lower.match(/budget\s*[:=]?\s*([\w\d]+)/i);
+  /**
+   * =====================================================
+   * Main Analysis
+   * =====================================================
+   */
 
-    if (budget) {
-      constraints.budget = budget[1];
+  static analyze(
+    text: string
+  ): RequirementAnalysis {
+
+    const processed =
+      PreprocessingService.process(text);
+
+    const tokens =
+      normalizeTokens(
+        processed.uniqueTokens
+      );
+
+    const functionalRequirements =
+      this.extractFunctionalRequirements(
+        tokens
+      );
+
+    const nonFunctionalRequirements =
+      this.extractNonFunctionalRequirements(
+        tokens
+      );
+
+    const businessEntities =
+      this.extractBusinessEntities(
+        tokens
+      );
+
+    /**
+     * Promote entities as
+     * functional requirements.
+     */
+
+    for (
+
+      const entity
+
+      of businessEntities
+
+    ) {
+
+      if (
+
+        !functionalRequirements.includes(
+          entity
+        )
+
+      ) {
+
+        functionalRequirements.push(
+          entity
+        );
+
+      }
+
     }
 
-    const timeline =
-      lower.match(/timeline\s*[:=]?\s*([\w\d]+)/i);
+    const detectedDomains =
+      this.detectDomains(tokens);
 
-    if (timeline) {
-      constraints.timeline = timeline[1];
-    }
+    const constraints =
+      extractConstraints(
+        processed.normalizedText
+      );
 
-    const team =
-      lower.match(/team\s*[:=]?\s*([\w\d]+)/i);
+    const missingRequirements =
+      findMissingConstraints(
+        constraints
+      );
 
-    if (team) {
-      constraints.teamSize = team[1];
-    }
+    const complexity =
+      calculateComplexity(
 
-    const missingRequirements: string[] = [];
+        functionalRequirements,
 
-    if (!constraints.budget)
-      missingRequirements.push("Budget");
+        nonFunctionalRequirements
 
-    if (!constraints.timeline)
-      missingRequirements.push("Timeline");
-
-    if (!constraints.teamSize)
-      missingRequirements.push("Team Size");
-
-    let complexity: RequirementComplexity = "Low";
-
-    const requirementScore =
-      functionalRequirements.length +
-      nonFunctionalRequirements.length;
-
-    if (requirementScore >= 8)
-      complexity = "High";
-    else if (requirementScore >= 4)
-      complexity = "Medium";
+      );
 
     const completenessScore =
-      Math.min(
-        Math.round(
-          (requirementScore / 10) * 100
-        ),
-        100
+      calculateCompleteness(
+
+        functionalRequirements,
+
+        nonFunctionalRequirements,
+
+        detectedDomains
+
       );
+          /**
+     * Remove duplicates
+     */
+
+    const uniqueFunctional =
+      unique(
+        functionalRequirements
+      );
+
+    const uniqueNonFunctional =
+      unique(
+        nonFunctionalRequirements
+      );
+
+    const uniqueKeywords =
+      unique(tokens);
+
+    /**
+     * Sort detected domains
+     */
+
+    detectedDomains.sort(
+
+      (a, b) =>
+
+        b.confidence -
+
+        a.confidence
+
+    );
+
+    /**
+     * Final Result
+     */
 
     return {
 
-      keywords: tokens,
+      keywords:
+        uniqueKeywords,
 
-      functionalRequirements,
+      functionalRequirements:
+        uniqueFunctional,
 
-      nonFunctionalRequirements,
+      nonFunctionalRequirements:
+        uniqueNonFunctional,
 
       detectedDomains,
 

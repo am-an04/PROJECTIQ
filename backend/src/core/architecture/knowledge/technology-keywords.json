@@ -1,0 +1,84 @@
+{
+  "languages": [
+    "Java",
+    "JavaScript",
+    "TypeScript",
+    "Python",
+    "C",
+    "C++",
+    "C#",
+    "Go",
+    "Rust",
+    "PHP",
+    "Kotlin",
+    "Swift"
+  ],
+
+  "frameworks": [
+    "React",
+    "Angular",
+    "Vue",
+    "Express",
+    "NestJS",
+    "Spring",
+    "Spring Boot",
+    "Django",
+    "Flask",
+    "FastAPI",
+    "Laravel",
+    "ASP.NET"
+  ],
+
+  "databases": [
+    "MongoDB",
+    "MySQL",
+    "PostgreSQL",
+    "SQLite",
+    "Redis",
+    "Oracle",
+    "MariaDB",
+    "Cassandra",
+    "Firebase"
+  ],
+
+  "cloud": [
+    "AWS",
+    "Azure",
+    "Google Cloud",
+    "DigitalOcean",
+    "Heroku",
+    "Vercel",
+    "Netlify"
+  ],
+
+  "devops": [
+    "Docker",
+    "Kubernetes",
+    "GitHub",
+    "GitHub Actions",
+    "Jenkins",
+    "Terraform",
+    "Ansible",
+    "Nginx"
+  ],
+
+  "ai": [
+    "TensorFlow",
+    "PyTorch",
+    "Scikit-learn",
+    "OpenCV",
+    "Hugging Face",
+    "LangChain",
+    "OpenAI"
+  ],
+
+  "security": [
+    "JWT",
+    "OAuth",
+    "OAuth2",
+    "bcrypt",
+    "HTTPS",
+    "TLS",
+    "SSL"
+  ]
+}

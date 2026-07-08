@@ -1,0 +1,17 @@
+[
+  {
+    "id": "docker",
+    "name": "Docker",
+    "description": "Containerized deployment."
+  },
+  {
+    "id": "kubernetes",
+    "name": "Kubernetes",
+    "description": "Container orchestration platform."
+  },
+  {
+    "id": "serverless",
+    "name": "Serverless",
+    "description": "Cloud function deployment."
+  }
+]
