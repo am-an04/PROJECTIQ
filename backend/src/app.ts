@@ -10,6 +10,7 @@ import authRoutes from "./modules/auth/index.js";
 import recommendationRoutes from "./modules/recommendation/index.js";
 import planningRoutes from "./modules/planning/planning.routes.js";
 import architectureRoutes from "./modules/architecture/index.js";
+import improvementRoutes from "./modules/improvement/index.js";
 const app = express();
 
 app.use(cors());
@@ -34,6 +35,10 @@ app.use(
 app.use(
   "/api/v1/architecture",
   architectureRoutes
+);
+app.use(
+  "/api/v1/improvement",
+  improvementRoutes
 );
 app.use("/api/v1/health", healthRoutes);
 app.use("/api/v1/projects", projectRoutes);
