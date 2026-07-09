@@ -2,7 +2,7 @@ import {
   EvaluationContext,
 } from "../evaluation.context.js";
 
-export interface RequirementScoreResult {
+export interface TechnologyScoreResult {
 
   score: number;
 
@@ -12,10 +12,10 @@ export interface RequirementScoreResult {
 
 }
 
-export interface RequirementScoreEngine {
+export interface TechnologyScoreEngine {
 
   evaluate(
     context: EvaluationContext
-  ): RequirementScoreResult;
+  ): TechnologyScoreResult;
 
 }

@@ -2,7 +2,7 @@ import {
   EvaluationContext,
 } from "../evaluation.context.js";
 
-export interface RequirementScoreResult {
+export interface ResumeScoreResult {
 
   score: number;
 
@@ -10,12 +10,14 @@ export interface RequirementScoreResult {
 
   weaknesses: string[];
 
+  recommendations: string[];
+
 }
 
-export interface RequirementScoreEngine {
+export interface ResumeScoreEngine {
 
   evaluate(
     context: EvaluationContext
-  ): RequirementScoreResult;
+  ): ResumeScoreResult;
 
 }
