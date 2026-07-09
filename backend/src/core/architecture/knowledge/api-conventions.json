@@ -1,0 +1,5 @@
+{
+  "resourcePlural": true,
+  "includeCrud": true,
+  "versionPrefix": "/api/v1"
+}

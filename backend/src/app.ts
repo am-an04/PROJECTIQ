@@ -9,6 +9,9 @@ import { projectRoutes } from "./modules/project/index.js";
 import authRoutes from "./modules/auth/index.js";
 import recommendationRoutes from "./modules/recommendation/index.js";
 import planningRoutes from "./modules/planning/planning.routes.js";
+import architectureRoutes from "./modules/architecture/index.js";
+import { evaluationRoutes } from "./modules/evaluation/index.js";
+import analyzeRoutes from "./modules/analyze/index.js";
 const app = express();
 
 app.use(cors());
@@ -30,9 +33,18 @@ app.use(
   "/api/v1/planning",
   planningRoutes
 );
+app.use(
+  "/api/v1/architecture",
+  architectureRoutes
+);
+app.use(
+  "/api/v1/analyze",
+  analyzeRoutes
+);
 app.use("/api/v1/health", healthRoutes);
 app.use("/api/v1/projects", projectRoutes);
 app.use("/api/v1/recommendation", recommendationRoutes);
+app.use("/api/v1/evaluation", evaluationRoutes);
 app.use(notFoundHandler);
 app.use(errorHandler);
 

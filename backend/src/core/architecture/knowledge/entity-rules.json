@@ -1,0 +1,29 @@
+{
+  "preferredEntities": [
+    "User",
+    "Admin",
+    "Project",
+    "Requirement",
+    "Recommendation",
+    "Planning",
+    "Architecture",
+    "Evaluation",
+    "Analytics",
+    "Task",
+    "Milestone",
+    "Report",
+    "Notification",
+    "Dashboard",
+    "Document",
+    "Comment",
+    "Message",
+    "Role",
+    "Permission",
+    "Team",
+    "Organization",
+    "Profile",
+    "Resource",
+    "Issue",
+    "Ticket"
+  ]
+}

@@ -1,0 +1,24 @@
+[
+  {
+    "id": "mern",
+    "stack": "MERN",
+    "folders": [
+      "frontend",
+      "backend",
+      "shared",
+      "docs",
+      "docker"
+    ]
+  },
+  {
+    "id": "python-ai",
+    "stack": "Python AI",
+    "folders": [
+      "backend",
+      "ai-service",
+      "datasets",
+      "models",
+      "notebooks"
+    ]
+  }
+]

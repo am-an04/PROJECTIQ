@@ -1,0 +1,45 @@
+{
+  "authentication": [
+    "login",
+    "logout",
+    "register",
+    "signup",
+    "signin",
+    "authentication",
+    "authorization"
+  ],
+  "userManagement": [
+    "user",
+    "profile",
+    "account",
+    "role",
+    "permission"
+  ],
+  "projectManagement": [
+    "project",
+    "requirement",
+    "planning",
+    "evaluation",
+    "architecture",
+    "recommendation",
+    "analytics"
+  ],
+  "communication": [
+    "message",
+    "chat",
+    "notification",
+    "email"
+  ],
+  "reporting": [
+    "report",
+    "dashboard",
+    "statistics",
+    "analytics"
+  ],
+  "payment": [
+    "payment",
+    "invoice",
+    "transaction",
+    "billing"
+  ]
+}
