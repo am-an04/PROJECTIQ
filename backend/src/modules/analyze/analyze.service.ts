@@ -19,6 +19,10 @@ import {
 import {
   EvaluationService,
 } from "../evaluation/evaluation.service.js";
+
+import {
+  AnalyticsService,
+} from "../analytics/analytics.service.js";
 export class AnalyzeService {
 
   private readonly planningService =
@@ -90,6 +94,21 @@ const improvement =
 
   });
 
+  const analytics =
+  AnalyticsService.generateAnalytics({
+
+    recommendation,
+
+    planning,
+
+    architecture,
+
+    evaluation,
+
+    improvement,
+
+  });
+
     /* =====================================================
        Final Result
     ===================================================== */
@@ -104,7 +123,7 @@ const improvement =
 
       evaluation,
       improvement,
-
+      analytics,
     };
 
   }

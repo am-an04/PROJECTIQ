@@ -16,7 +16,9 @@ import {
 import {
   EvaluationResult,
 } from "../evaluation/evaluation.types.js";
-
+import {
+  AnalyticsResult,
+} from "../analytics/analytics.types.js";
 /* ==========================================================
    Analyze Request
 ========================================================== */
@@ -38,5 +40,6 @@ export interface AnalyzeResult {
 
   evaluation: EvaluationResult;
   
-  improvement: ImprovementResult
+  improvement: ImprovementResult;
+  analytics: AnalyticsResult;
 }
