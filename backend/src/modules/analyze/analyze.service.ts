@@ -2,7 +2,9 @@ import {
   AnalyzeRequest,
   AnalyzeResult,
 } from "./analyze.types.js";
-
+import {
+  ImprovementService,
+} from "../improvement/improvement.service.js";
 import {
   RecommendationService,
 } from "../recommendation/recommendation.service.js";
@@ -14,11 +16,13 @@ import {
 import {
   ArchitectureService,
 } from "../architecture/architecture.service.js";
-
 import {
   EvaluationService,
 } from "../evaluation/evaluation.service.js";
 
+import {
+  AnalyticsService,
+} from "../analytics/analytics.service.js";
 export class AnalyzeService {
 
   private readonly planningService =
@@ -73,6 +77,8 @@ export class AnalyzeService {
         architecture,
 
       });
+      /* =====================================================
+   Improvement
 
     /* =====================================================
        Final Result
@@ -87,7 +93,8 @@ export class AnalyzeService {
       architecture,
 
       evaluation,
-
+      improvement,
+      analytics,
     };
 
   }

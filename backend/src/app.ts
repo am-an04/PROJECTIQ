@@ -10,7 +10,8 @@ import authRoutes from "./modules/auth/index.js";
 import recommendationRoutes from "./modules/recommendation/index.js";
 import planningRoutes from "./modules/planning/planning.routes.js";
 import architectureRoutes from "./modules/architecture/index.js";
-import { evaluationRoutes } from "./modules/evaluation/index.js";
+import improvementRoutes from "./modules/improvement/index.js";
+import analyticsRoutes from "./modules/analytics/index.js";
 import analyzeRoutes from "./modules/analyze/index.js";
 const app = express();
 
@@ -38,9 +39,14 @@ app.use(
   architectureRoutes
 );
 app.use(
-  "/api/v1/analyze",
-  analyzeRoutes
+  "/api/v1/improvement",
+  improvementRoutes
 );
+app.use(
+  "/api/v1/analytics",
+  analyticsRoutes
+);
+app.use("/api/v1/analyze", analyzeRoutes);
 app.use("/api/v1/health", healthRoutes);
 app.use("/api/v1/projects", projectRoutes);
 app.use("/api/v1/recommendation", recommendationRoutes);
