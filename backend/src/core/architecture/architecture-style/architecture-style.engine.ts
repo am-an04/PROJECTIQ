@@ -26,13 +26,13 @@ export class DefaultArchitectureStyleEngine
       options.planning;
 
     const overallScore =
-      recommendation.score.overallScore;
+  recommendation.score?.overallScore ?? 50;
 
-    const estimatedWeeks =
-      planning.metadata.estimatedCompletionWeeks;
+const scalabilityScore =
+  recommendation.score?.scalabilityScore ?? 50;
 
-    const scalabilityScore =
-      recommendation.score.scalabilityScore;
+const estimatedWeeks =
+  planning.metadata?.estimatedCompletionWeeks ?? 8;
 
     const complexity =
       Math.ceil(overallScore / 20);

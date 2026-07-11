@@ -16,7 +16,9 @@ export class PlanningController {
   ): Promise<void> => {
 
     try {
-
+console.log(
+  JSON.stringify(req.body, null, 2)
+);
       const validatedRequest =
         PlanningRequestSchema.parse(req.body);
 

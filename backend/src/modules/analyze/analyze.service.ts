@@ -79,35 +79,6 @@ export class AnalyzeService {
       });
       /* =====================================================
    Improvement
-===================================================== */
-
-const improvement =
-  ImprovementService.generateImprovement({
-
-    recommendation,
-
-    planning,
-
-    architecture,
-
-    evaluation,
-
-  });
-
-  const analytics =
-  AnalyticsService.generateAnalytics({
-
-    recommendation,
-
-    planning,
-
-    architecture,
-
-    evaluation,
-
-    improvement,
-
-  });
 
     /* =====================================================
        Final Result

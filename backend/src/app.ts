@@ -50,6 +50,7 @@ app.use("/api/v1/analyze", analyzeRoutes);
 app.use("/api/v1/health", healthRoutes);
 app.use("/api/v1/projects", projectRoutes);
 app.use("/api/v1/recommendation", recommendationRoutes);
+app.use("/api/v1/evaluation", evaluationRoutes);
 app.use(notFoundHandler);
 app.use(errorHandler);
 
